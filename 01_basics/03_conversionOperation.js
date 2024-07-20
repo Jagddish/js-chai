@@ -25,3 +25,30 @@ let someNumber = 33;
 let stringNumber = String(someNumber);
 console.log(stringNumber);
 console.log(typeof stringNumber);
+
+// operations
+let value = 3;
+let negValue = -value;
+// console.log(negValue);
+
+// console.log(2 + 2);
+// console.log(2 - 2);
+// console.log(2 * 2);
+// console.log(2 ** 2);
+// console.log(2 / 3);
+// console.log(2 % 3);
+
+let str1 = "hello";
+let str2 = " jagddish";
+
+let str3 = str1 + str2;
+console.log(str3);
+
+console.log(1 + 2 + "2");
+
+console.log(+true); // 1 converts to num
+console.log(+""); // empty str is 0
+
+let gameCounter = 100;
+gameCounter++; // study prefix and postfix operator
+console.log(gameCounter);
