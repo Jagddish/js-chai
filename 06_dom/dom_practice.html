@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom practice</title>
+    <style>
+      .bg-black {
+        background-color: #212121;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body class="bg-black">
+    <div>
+      <h1 class="heading" id="title">
+        Dom learning<span style="display: none">Hello this is span </span>
+      </h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <ul>
+        <li>red</li>
+        <li>blue</li>
+        <li>green</li>
+      </ul>
+    </div>
+    <div class="flex-box">
+      <p class="list-item">Lorem ipsum dolor sit amet.</p>
+      <p class="list-item">Lorem ipsum dolor sit amet.</p>
+      <p class="list-item">Lorem ipsum dolor sit amet.</p>
+    </div>
+  </body>
+  <script>
+    const title = document.getElementById("title"); // select the element
+    console.log(title.id); // get the id or class
+    console.log(title.className);
+    console.log(title.getAttribute("id")); // another way using getAttribute
+    title.setAttribute("class", "test heading"); // this overrides previous classes
+
+    // add stles to element using style like inline css
+    title.style.backgroundColor = "green";
+    title.style.padding = "16px";
+    title.style.borderRadius = "15px";
+    console.log(title.textContent); // get textnode of element show all including display none
+    console.log(title.innerText); // only shows visible text
+    console.log(title.innerHTML); //  element with html
+
+    document.querySelector("#title"); // return first element as an object
+    document.querySelector(".heading"); // returns ob
+    const first = document.querySelector("p");
+    const selectAll = document.querySelectorAll("p"); // return nodelist
+
+    // selecting ul
+    const ulList = document.querySelector("ul");
+    const firstLi = ulList.querySelector("li");
+    firstLi.style.backgroundColor = "red";
+    // select all
+    const colors = ["red", "blue", "green"];
+    const ulAll = document.querySelectorAll("li"); //  return nodelist not pure array
+    ulAll.forEach(
+      (item, index) => (item.style.backgroundColor = colors[index]),
+    );
+    console.log(first);
+    console.log(selectAll);
+    /// html collection
+    const tempList = document.getElementsByClassName("list-item");
+    // convert tempList to array from html collection
+    const convertedHtmlCollection = Array.from(tempList);
+    console.log(convertedHtmlCollection);
+  </script>
+</html>
