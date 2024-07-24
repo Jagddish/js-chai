@@ -28,6 +28,12 @@
       <p class="list-item">Lorem ipsum dolor sit amet.</p>
       <p class="list-item">Lorem ipsum dolor sit amet.</p>
     </div>
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
   </body>
   <script>
     const title = document.getElementById("title"); // select the element
@@ -40,7 +46,7 @@
     title.style.backgroundColor = "green";
     title.style.padding = "16px";
     title.style.borderRadius = "15px";
-    console.log(title.textContent); // get textnode of element show all including display none
+    console.log(title.textContent); // get textnode of element show all including display none without tags
     console.log(title.innerText); // only shows visible text
     console.log(title.innerHTML); //  element with html
 
@@ -66,5 +72,52 @@
     // convert tempList to array from html collection
     const convertedHtmlCollection = Array.from(tempList);
     console.log(convertedHtmlCollection);
+
+    // get what's in the parent element
+    const parent = document.querySelector(".parent");
+    // children property
+    console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[0]); // prints html element
+    // console.log(parent.children[0].innerHTML); // prints textnode
+
+    //forloop  for html collection
+    for (let i = 0; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML);
+    }
+
+    // change style for children
+    parent.children[0].style.color = "orange";
+
+    // get first element child like n-th in css
+    // firstElementChild lastElementChild
+    // console.log(parent.firstElementChild);
+
+    // get parent element using child
+    // using parentElement
+    const dayOne = document.querySelector(".day");
+    console.log(dayOne.parentElement);
+
+    // get sibling next element
+    // console.log(dayOne.nextElementSibling);
+
+    // childNodes differ from Nodelist
+    console.log(parent.childNodes);
+
+    // create a div and display on page
+    const div = document.createElement("div");
+    // add properties to our div
+    div.className = "main"; // since elements are objs we can inject like this
+    div.id = "myId";
+    // to add custome attribute likes title='hello'
+    div.setAttribute("title", "generated title");
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px";
+    // div.innerText = 'Chai aur code' // add text to our div
+    const addtext = document.createTextNode("Chai aur code"); // another wy
+    div.appendChild(addtext);
+
+    // finally append the div to body
+    document.body.appendChild(div);
   </script>
 </html>
