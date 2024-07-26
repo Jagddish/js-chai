@@ -57,5 +57,41 @@
       </ul>
     </div>
   </body>
-  <script></script>
+  <script>
+    // document.getElementById('owl').onClick = funcion(){
+    //   alert('owl clicked')
+    //type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currenttarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shift, keyCode
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("ul clicked");
+    //   },
+    //   false,
+    // );
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("Owl press");
+    //     e.stopPropagation();
+    //   },
+    //   false,
+    // );
+    // document.getElementById("google").addEventListener("click", (e) => {
+    //   console.log("google click");
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    // });
+
+    document.querySelector("#images").addEventListener("click", (e) => {
+      console.log(e.target.parentNode);
+      if (e.target.tagName === "IMG") {
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+      // removeIt.parentNode.removeChild(removeIt);
+    });
+  </script>
 </html>
